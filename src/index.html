@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SunCart | Your One Stop Shopping Destination</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/global.css" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+
+  <body class="font-inter relative">
+    <header
+      class="bg-transparent fixed top-0 left-0 right-0 z-40 backdrop-blur-sm border-b border-[#1118270a] w-full"
+    >
+      <div class="container header flex flex-col gap-2.5">
+        <div class="topbar flex items-center justify-between gap-[1rem]">
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              class="menu-bar border-none flex items-center lg:hidden"
+              id="openMobileNav"
+            >
+              <i class="bx bx-menu text-3xl"></i>
+            </button>
+
+            <div class="brand flex items-center gap-3 font-bold text-[1.05rem]">
+              <div
+                class="logo w-10 h-10 bg-accent rounded-[10px] grid place-items-center text-white font-extrabold shadow-soft"
+                aria-hidden
+              >
+                SC
+              </div>
+              <div>
+                <div class="text-[.95rem] text-text">SunCart</div>
+                <div class="text-[.7rem] text-muted mt-0.5">
+                  Fresh picks, sunny deals
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="search xl:flex hidden items-center gap-2 bg-primary rounded-full min-w-[220px] border border-[#11182708] shadow-xs"
+              role="search"
+              aria-label="Search products"
+            >
+              <i class="bx bx-search"></i>
+              <input
+                type="search"
+                id="q"
+                placeholder="Search products, e.g. 'lemon dress'"
+                aria-label="Search input"
+                class="bg-transparent outline-none border-none text-[.95rem] text-text focus:ring-0"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-center gap-5">
+            <nav
+              aria-label="Main navigation"
+              class="items-center gap-2 lg:flex hidden"
+            >
+              <a
+                class="nav-link rounded-[20px] text-muted font-semibold no-underline hover:text-text transition-colors duration-200 ease hover:bg-[#11182708]"
+                href="#"
+                >Home</a
+              >
+
+              <a href="#">
+                <div
+                  class="dropdown-container bg-transparent font-semibold shadow-xs relative border border-[#1118270f] rounded-[8px] transition-colors duration-200 ease"
+                >
+                  <div
+                    class="dropdown-toggle flex items-center gap-2 relative transition-colors duration-200 ease"
+                    id="accountToggle"
+                    aria-controls="accountMenu"
+                  >
+                    <i class="bx bx-user text-lg"></i>
+                    <span class="text-sm">Account</span>
+                    <i class="bx bx-chevron-down text-lg"></i>
+                  </div>
+                  <div
+                    class="dropdown-menu absolute top-11 w-[200px] -left-8 right-0 bg-white shadow-card z-10 border border-[#0000001a] rounded-[8px] hidden transform transition duration-300 ease-out origin-top opacity-0 scale-95 -translate-y-2"
+                    id="accountMenu"
+                  >
+                    <div
+                      class="sign-up-btn flex flex-col border-b border-[#0000001a]"
+                    >
+                      <button
+                        type="button"
+                        class="text-white font-normal text-sm bg-accent w-full rounded-[8px] shadow-soft cursor-pointer"
+                      >
+                        Sign Up
+                      </button>
+                    </div>
+
+                    <ul class="account-menu-list flex flex-col gap-3">
+                      <li
+                        class="rounded-[8px] hover:bg-[#11182708] hover:text-accent"
+                      >
+                        <a href="#" class="flex items-center gap-3.5">
+                          <i class="bx bx-user text-xl"></i>
+                          <span class="text-muted text-sm">My Account</span>
+                        </a>
+                      </li>
+
+                      <li
+                        class="rounded-[8px] hover:bg-[#11182708] hover:text-accent"
+                      >
+                        <a href="#" class="flex items-center gap-3.5">
+                          <i class="bx bx-cube text-xl"></i>
+                          <span class="text-muted text-sm">Orders</span>
+                        </a>
+                      </li>
+
+                      <li
+                        class="rounded-[8px] hover:bg-[#11182708] hover:text-accent"
+                      >
+                        <a href="#" class="flex items-center gap-3.5">
+                          <i class="bx bx-heart text-xl"></i>
+                          <span class="text-muted text-sm">Wishlist</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#">
+                <div
+                  class="dropdown-container bg-transparent font-semibold shadow-xs relative border border-[#1118270f] rounded-[8px] transition-colors duration-200 ease"
+                >
+                  <div
+                    class="dropdown-toggle flex items-center gap-2"
+                    id="helpToggle"
+                    aria-controls="helpMenu"
+                  >
+                    <i class="bx bx-help-circle text-xl"></i>
+                    <span class="text-sm">Help</span>
+                    <i class="bx bx-chevron-down text-lg"></i>
+                  </div>
+                  <div
+                    class="dropdown-menu absolute top-11 w-[200px] -left-10 right-0 bg-white shadow-card z-10 border border-[#0000001a] rounded-[8px] hidden transform transition duration-300 ease-out origin-top opacity-0 scale-95 -translate-y-2"
+                    id="helpMenu"
+                  >
+                    <ul class="help-menu-list flex flex-col gap-3">
+                      <li
+                        class="text-muted text-sm rounded-[8px] hover:bg-[#11182708] hover:text-text"
+                      >
+                        <a href="#">Help Center</a>
+                      </li>
+                      <li
+                        class="text-muted text-sm rounded-[8px] hover:bg-[#11182708] hover:text-text"
+                      >
+                        <a href="#">Place an order</a>
+                      </li>
+                      <li
+                        class="text-muted text-sm rounded-[8px] hover:bg-[#11182708] hover:text-text"
+                      >
+                        <a href="#">Payment options</a>
+                      </li>
+                      <li
+                        class="text-muted text-sm rounded-[8px] hover:bg-[#11182708] hover:text-text"
+                      >
+                        <a href="#">Track an order</a>
+                      </li>
+                      <li
+                        class="text-muted text-sm rounded-[8px] hover:bg-[#11182708] hover:text-text"
+                      >
+                        <a href="#">Cancel an order</a>
+                      </li>
+                      <li
+                        class="text-muted text-sm rounded-[8px] hover:bg-[#11182708] hover:text-text"
+                      >
+                        <a href="#">Returns & Refunds</a>
+                      </li>
+                    </ul>
+
+                    <div
+                      class="chat-btn flex flex-col border-t border-[#0000001a]"
+                    >
+                      <button
+                        type="button"
+                        class="inline-flex items-center gap-3.5 text-white font-normal text-sm bg-accent w-full rounded-[8px] shadow-soft cursor-pointer"
+                      >
+                        <i class="bx bx-message-dots text-lg"></i>
+                        <span>Live Chat</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <button
+                type="button"
+                class="btn cart-btn inline-flex items-center gap-1 appearance-none border-none bg-accent text-text rounded-[8px] font-semibold cursor-pointer shadow-card relative focus:shadow-focus"
+                id="cartToggle"
+                aria-controls="cart-drawer"
+                aria-expanded="false"
+              >
+                <i class="bx bx-cart text-xl"></i>
+                Cart
+                <span
+                  class="cart-count absolute -top-1 -right-2 bg-[#111827] text-white text-xs font-semibold w-[22px] rounded-[999px] inline-flex items-center justify-center"
+                  id="cartCount"
+                  >0</span
+                >
+              </button>
+            </nav>
+
+            <div class="flex items-center gap-4 font-light lg:hidden">
+              <button type="button" class="border-none">
+                <i class="bx bx-user-x text-3xl font-light"></i>
+              </button>
+              <button type="button" class="border-none relative" id="cartToggle" aria-controls="cart-drawer" aria-expanded="false">
+                <i class="bx bx-cart text-3xl font-light"></i>
+                <span
+                  class="cart-count absolute -top-0.5 -right-2 bg-[#111827] text-white text-xs font-medium w-[20px] rounded-[8px] inline-flex items-center justify-center"
+                  id="cartCount"
+                  >0</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-bar block xl:hidden">
+          <div
+            class="search flex items-center gap-1 bg-primary rounded-full w-full border border-[#11182708] shadow-xs"
+            role="search"
+            aria-label="Search products"
+          >
+            <i class="bx bx-search text-xl"></i>
+            <input
+              type="search"
+              placeholder="Search products, brands and categories"
+              aria-label="Search input"
+              class="w-full bg-primary rounded-full min-w-[220px] text-[.95rem] text-text border-none outline-none focus:outline-none focus:ring-0"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation bar -->
+    <div
+      class="mobile-nav bg-black/30 backdrop-blur-md fixed inset-0 w-full z-40 transition-opacity duration-300 ease-in-out opacity-0 h-full hidden"
+      id="mobileNav"
+    >
+      <div
+        class="mobile-menu absolute top-0 left-0 flex flex-col gap-3 bg-white w-[90%] h-full -translate-x-full transform transition-transform duration-300 ease-in-out rounded-tr-4xl rounded-br-4xl"
+        id="mobileMenu"
+      >
+        <div
+          class="brand flex items-center gap-3 font-bold text-[1.05rem] border-b border-[#1118270a]"
+        >
+          <button type="button" class="border-none" id="closeMobileNav">
+            <i class="bx bx-x text-3xl"></i>
+          </button>
+
+          <div
+            class="logo w-10 h-10 bg-accent rounded-[10px] grid place-items-center text-white font-extrabold shadow-soft"
+            aria-hidden
+          >
+            SC
+          </div>
+
+          <div>
+            <div class="text-[.95rem] text-text">SunCart</div>
+            <div class="text-[.7rem] text-muted mt-0.5">
+              Fresh picks, sunny deals
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-menu-links flex flex-col gap-3 overflow-y-auto">
+          <div class="help border-b border-[#1118270a]">
+            <a href="#" class="flex items-center justify-between">
+              <span class="text-sm">NEED HELP?</span>
+              <i class="bx bx-chevron-right text-xl"></i>
+            </a>
+          </div>
+
+          <div class="help">
+            <a href="#" class="flex items-center justify-between">
+              <span class="text-sm">MY ACCOUNT</span>
+              <i class="bx bx-chevron-right text-xl"></i>
+            </a>
+          </div>
+
+          <div class="easy-links border-b border-[#1118270a]">
+            <ul class="flex flex-col gap-4">
+              <li>
+                <a href="#" class="flex items-center gap-2">
+                  <i class="bx bx-cube text-lg"></i>
+                  <span class="text-sm font-normal">Orders</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="flex items-center gap-2">
+                  <i class="bx bx-loader text-lg"></i>
+                  <span class="text-sm font-normal">Pending Reviews</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="flex items-center gap-2">
+                  <i class="bx bx-gift text-lg"></i>
+                  <span class="text-sm font-normal">Voucher</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="flex items-center gap-2">
+                  <i class="bx bx-heart text-lg"></i>
+                  <span class="text-sm font-normal">Wishlist</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="categories flex flex-col gap-3.5 border-b border-[#1118270a]"
+          >
+            <a href="#" class="flex items-center justify-between">
+              <span class="text-sm">OUR CATEGORIES</span>
+              <span class="text-accent text-xs">See All</span>
+            </a>
+
+            <div class="easy-links">
+              <ul class="flex flex-col gap-4">
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="bx bx-fridge text-lg"></i>
+                    <span class="text-sm">Appliances</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="bx bx-mobile text-lg"></i>
+                    <span class="text-sm">Phone & Tablets</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="bx bx-plug text-lg"></i>
+                    <span class="text-sm">Electronics</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="ri-building-line text-lg"></i>
+                    <span class="text-sm">Home & Office</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="bx bx-store-alt text-lg"></i>
+                    <span class="text-sm">Supermarket</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="bx bx-body text-lg"></i>
+                    <span class="text-sm">Health & Beauty</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="bx bx-desktop" text-lg></i>
+                    <span class="text-sm">Computing</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="bx bxs-t-shirt text-lg"></i>
+                    <span class="text-sm">Women's Fashion</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="ri-shirt-line text-lg"></i>
+                    <span class="text-sm">Men's Fashion</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="bx bxs-baby-carriage text-lg"></i>
+                    <span class="text-sm">Baby Products</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="ri-xbox-line text-lg"></i>
+                    <span class="text-sm">Gaming</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="bx bx-car text-lg"></i>
+                    <span class="text-sm">Automobile</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2">
+                    <i class="ri-football-fill text-lg"></i>
+                    <span class="text-sm">Sports</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="services flex flex-col gap-3 border-b border-[#1118270a]">
+            <div>
+              <span class="text-sm">OUR SERVICES</span>
+            </div>
+
+            <div class="easy-links">
+              <ul class="flex flex-col gap-3">
+                <li>
+                  <a href="#">
+                    <span class="text-sm">Pay Airtime & Bills</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="text-sm">Pay Electricity Bills</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="text-sm">Pay Internet Bills</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="text-sm">Buy Data</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="helpful-links">
+            <ul class="flex flex-col gap-3">
+              <li class="text-sm"><a href="#">Service Center</a></li>
+              <li class="text-sm"><a href="#">Branches</a></li>
+              <li class="text-sm"><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="container font-inter main-container">
+        <section
+          class="section_0ne hero grid lg:grid-cols-[1fr_500px] gap-6 items-center"
+        >
+          <div class="hero-card rounded-[8px] shadow-soft">
+            <h1
+              id="hero-title"
+              class="text-[2rem] font-bold text-text text-center lg:text-start"
+            >
+              A Little Sunshine for Your Cart
+            </h1>
+            <p class="text-muted mb-[1rem] text-center lg:text-start">
+              Quality products with warm colors and friendly prices. Browse our
+              curated picks or search to find something special.
+            </p>
+            <div
+              class="hero-cta flex gap-[.75rem] items-center justify-center lg:justify-start"
+            >
+              <button
+                class="btn appearance-none border-none bg-accent text-text rounded-lg font-semibold cursor-pointer shadow-card outline-none focus:shadow-focus hover:-translate-y-1 transition-transform duration-200 ease"
+                id="shopNow"
+              >
+                Shop bestsellers
+              </button>
+              <button
+                class="btn appearance-none border border-[#1118270f] bg-transparent text-text rounded-lg font-semibold cursor-pointer shadow-card ghost outline-none focus:shadow-focus hover:-translate-y-1 transition-transform duration-200 ease"
+                id="learnMore"
+              >
+                Learn more
+              </button>
+            </div>
+
+            <div class="category-alt mt-4">
+              <ul
+                class="flex gap-[0.6rem] w-full flex-wrap items-center justify-center lg:justify-start"
+              >
+                <li>
+                  <a
+                    href="#!"
+                    class="pill bg-white font-semibold hover:text-accent"
+                    >New</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#!"
+                    class="pill bg-white font-semibold hover:text-accent"
+                    >Clothing</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#!"
+                    class="pill bg-white font-semibold hover:text-accent"
+                    >Home</a
+                  >
+                </li>
+                <li class="hidden sm:block">
+                  <a
+                    href="#!"
+                    class="pill bg-white font-semibold hover:text-accent"
+                    >Accessories</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="#!"
+                    class="pill bg-white font-semibold hover:text-accent"
+                    >Gifts</a
+                  >
+                </li>
+                <li class="hidden sm:block">
+                  <a
+                    href="#!"
+                    class="pill bg-white font-semibold hover:text-accent"
+                    >Groceries</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <aside>
+            <div class="offers">
+              <h3 class="font-bold text-lg">Limited Offer</h3>
+              <p class="muted text-sm">
+                Extra 10% off selected items. Use code
+                <strong class="text-xs">SODIQ</strong>
+              </p>
+
+              <div
+                class="s-offer flex items-center justify-center sm:justify-start"
+              >
+                <button
+                  class="btn bg-[#fbbf24] border-none text-sm text-text rounded-lg font-bold cursor-pointer shadow-card outline-none focus:shadow-focus"
+                  id="offerBtn"
+                >
+                  Shop offer
+                </button>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section_Two carousels">
+          <div
+            id="default-carousel"
+            class="relative w-full"
+            data-carousel="slide"
+          >
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+              <!-- Item 1 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="../Assets/suncart-ad.png"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="..."
+                />
+              </div>
+              <!-- Item 2 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="../Assets/DesktopHomepageSlider712x384.png"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="..."
+                />
+              </div>
+              <!-- Item 3 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="../Assets/fruit-8773085_640.jpg"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="..."
+                />
+              </div>
+              <!-- Item 4 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="../Assets/peppers-2786684_640.jpg"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="..."
+                />
+              </div>
+              <!-- Item 5 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="../Assets/shoe-1773426_640.jpg"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <!-- Slider indicators -->
+            <div
+              class="absolute z-30 flex gap-[0.3rem] -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+            >
+              <button
+                type="button"
+                class="w-3 h-2 rounded-full"
+                aria-current="true"
+                aria-label="Slide 1"
+                data-carousel-slide-to="0"
+              ></button>
+              <button
+                type="button"
+                class="w-3 h-2 rounded-full"
+                aria-current="false"
+                aria-label="Slide 2"
+                data-carousel-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                class="w-3 h-2 rounded-full"
+                aria-current="false"
+                aria-label="Slide 3"
+                data-carousel-slide-to="2"
+              ></button>
+              <button
+                type="button"
+                class="w-3 h-2 rounded-full"
+                aria-current="false"
+                aria-label="Slide 4"
+                data-carousel-slide-to="3"
+              ></button>
+              <button
+                type="button"
+                class="w-3 h-2 rounded-full"
+                aria-current="false"
+                aria-label="Slide 5"
+                data-carousel-slide-to="4"
+              ></button>
+            </div>
+            <!-- Slider controls -->
+            <button
+              type="button"
+              class="absolute top-0 start-1 z-30 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none hidden lg:block"
+              data-carousel-prev
+            >
+              <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+              >
+                <svg
+                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 1 1 5l4 4"
+                  />
+                </svg>
+                <span class="sr-only">Previous</span>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="absolute top-0 end-1 z-30 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none hidden lg:block"
+              data-carousel-next
+            >
+              <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+              >
+                <svg
+                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4"
+                  />
+                </svg>
+                <span class="sr-only">Next</span>
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <section
+          class="section_Three layout font-inter grid lg:grid-cols-[260px_1fr] gap-[1.25rem]"
+          aria-label="Shop layout"
+        >
+          <aside
+            aria-label="Filters"
+            class="filter-scale bg-[var(--primary-color)] h-content rounded-[8px] hidden lg:block"
+          >
+            <div class="filters">
+              <h4 class="font-bold">Filters</h4>
+
+              <div class="text-sm text-muted">Category</div>
+
+              <div class="filters-btn flex gap-[0.5rem] flex-wrap">
+                <button
+                  class="bg-white font-semibold cursor-pointer rounded-full text-sm focus:shadow-focus"
+                  data-cat
+                >
+                  All
+                </button>
+                <button
+                  class="bg-white font-semibold cursor-pointer rounded-full text-sm focus:shadow-focus"
+                  data-cat
+                >
+                  Clothing
+                </button>
+                <button
+                  class="bg-white font-semibold cursor-pointer rounded-full text-sm focus:shadow-focus"
+                  data-cat
+                >
+                  Home
+                </button>
+                <button
+                  class="bg-white font-semibold cursor-pointer rounded-full text-sm focus:shadow-focus"
+                  data-cat
+                >
+                  Accessories
+                </button>
+                <button
+                  class="bg-white font-semibold cursor-pointer rounded-full text-sm focus:shadow-focus"
+                  data-cat
+                >
+                  Electronics
+                </button>
+              </div>
+
+              <hr class="border-none" />
+
+              <h4 class="font-bold">Price</h4>
+              <div
+                class="text-sm text-muted range grid grid-cols-2 gap-[0.5rem]"
+              >
+                <input
+                  class="w-full focus:outline-none focus:shadow-focus text-sm"
+                  type="number"
+                  id="minPrice"
+                  placeholder="Min"
+                />
+
+                <input
+                  class="w-full focus:outline-none focus:shadow-focus text-sm"
+                  type="number"
+                  id="maxPrice"
+                  placeholder="Max"
+                />
+              </div>
+
+              <div class="filters-apply">
+                <button
+                  class="btn ghost appearance-none bg-background font-semibold cursor-pointer shadow-card rounded-[8px] text-text text-sm focus:shadow-focus"
+                  id="applyFilters"
+                >
+                  Apply
+                </button>
+              </div>
+            </div>
+          </aside>
+
+          <section
+            aria-label="Products"
+            id="products"
+            class="products-section font-inter"
+          >
+            <div class="prod-header flex items-end justify-between">
+              <div>
+                <h2 class="font-bold md:text-2xl text-lg">Featured products</h2>
+                <div class="text-muted text-sm">
+                  Handpicked items you'll love
+                </div>
+              </div>
+
+              <div class="md:flex gap-[0.6rem] items-center hidden">
+                <label for="sort" class="muted text-sm">Sort:</label>
+                <select
+                  class="sort rounded-[8px] text-sm outline-none focus:shadow-focus focus:outline-none focus:ring-0 border-none"
+                  id="sort"
+                >
+                  <option value="featured" class="outline-none">Featured</option>
+                  <option value="featured">New Items</option>
+                  <option value="price-asc">Price: Low - High</option>
+                  <option value="price-desc">Price: High - Low</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="products grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-4 font-inter" id="productGrid" aria-live="polite">
+              <!-- products populated by JavaScript -->
+            </div>
+
+            <div class="flex justify-center load-btn">
+              <button class="btn ghost appearance-none border border-[#1118270f] bg-transparent text-text rounded-lg font-semibold cursor-pointer shadow-card ghost outline-none focus:shadow-focus" id="loadMore">Load more</button>
+            </div>
+          </section>
+        </section>
+
+        <!-- Cart Drawer -->
+        <aside id="cart-drawer" class="drawer" role="dialog" aria-label="Shopping cart">
+          <h3 class="font-bold">Your cart</h3>
+          <div class="cart-list" id="cartList"></div>
+          <div class="flex items-center justify-between idk">
+            <div>
+              <div class="text-muted text-sm">Subtotal</div>
+              <div id="subTotal" class="font-extrabold">$0.00</div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <button type="button" class="btn bg-accent appearance-none rounded-lg font-semibold cursor-pointer shadow-card outline-none focus:shadow-focus text-text text-sm" id="checkout">Checkout</button>
+              <button type="button" class="btn ghost bg-transparent rounded-lg text-text border-[#1118270f] font-semibold cursor-pointer shadow-card outline-none focus:shadow-focus text-sm" id="clearCart">Clear</button>
+            </div>
+          </div>
+        </aside>
+
+        <section class="Section_Four Our-prods">
+          <div></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-muted font-inter">
+          <div class="flex items-center justify-center md:justify-between gap-4 flex-wrap">
+            <div class="flex flex-col items-center md:items-start">
+              <strong>SunCart</strong>
+              <div class="text-muted text-sm">Made with a sunny palette.</div>
+            </div>
+            <div class="text-muted text-sm">© <span id="year"></span> SunCart. All rights reserved.</div>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <script type="module" src="../JavaScript/index.js"></script>
+    <script type="module" src="../JavaScript/mobileNav.js"></script>
+    <script type="module" src="../JavaScript/products.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  </body>
+</html>
